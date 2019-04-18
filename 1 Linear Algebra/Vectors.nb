@@ -1,0 +1,464 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17154,        454]
+NotebookOptionsPosition[     16302,        423]
+NotebookOutlinePosition[     16649,        438]
+CellTagsIndexPosition[     16606,        435]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p1", "=", "170"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", "55"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p3", "=", "35.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", 
+   RowBox[{"{", 
+    RowBox[{"p1", ",", "p2", ",", "p3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pxy", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "p2", ",", "p3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"px", "=", 
+   RowBox[{"{", 
+    RowBox[{"p1", ",", "0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"py", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "p2", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pz", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "p3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"arrowAxes", "[", "arrowLength_", "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Apply", "[", 
+        RowBox[{"RGBColor", ",", "#"}], "]"}], ",", 
+       RowBox[{"Arrow", "[", 
+        RowBox[{"Tube", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "#"}], "}"}], 
+         "]"}], "]"}]}], "}"}], "&"}], ",", 
+    RowBox[{"arrowLength", " ", 
+     RowBox[{"IdentityMatrix", "[", "3", "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"arrowAxes", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"p1", "*", "1.2"}], ",", 
+        RowBox[{"p2", "*", "1.4"}], ",", 
+        RowBox[{"p3", "*", "1.8"}]}], "}"}], "]"}], ",", 
+     RowBox[{"Dashing", "[", 
+      RowBox[{"{", 
+       RowBox[{"0.03", ",", "0.07"}], "}"}], "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{"p", ",", "pxy"}], "}"}], "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{"p", ",", "px"}], "}"}], "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{"pxy", ",", "py"}], "}"}], "]"}], ",", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{"pxy", ",", "pz"}], "}"}], "]"}], ",", 
+     RowBox[{"Dashing", "[", 
+      RowBox[{"{", "}"}], "]"}], ",", 
+     RowBox[{"Thickness", "[", "0.01", "]"}], ",", 
+     RowBox[{"Arrow", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "p"}], "}"}], "]"}]}],
+     "}"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"Opacity", "[", "1", "]"}]}], ",", 
+   RowBox[{"AxesStyle", "\[Rule]", "White"}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", 
+    RowBox[{"Directive", "[", 
+     RowBox[{
+      RowBox[{"FontSize", "\[Rule]", "20"}], ",", " ", 
+      RowBox[{"FontWeight", "->", "\"\<Bold\>\""}]}], "]"}]}], ",", " ", 
+   RowBox[{"TicksStyle", "\[Rule]", 
+    RowBox[{"Opacity", "[", "1", "]"}]}], ",", 
+   RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\:0420\:043e\:0441\:0442, \:0441\:043c\>\"", ",", 
+      "\"\<\:041c\:0430\:0441\:0441\:0430, \:043a\:0433\>\"", ",", 
+      "\"\<\:0412\:043e\:0437\:0440\:0430\:0441\:0442, \
+\:043b\:0435\:0442\>\""}], "}"}]}], ",", 
+   RowBox[{"AxesEdge", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"p1", "*", "1.2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"p2", "*", "1.4"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"p3", "*", "1.8"}]}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"AspectRatio", "\[Rule]", "1"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "^", "3"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ","}], "]"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAGIQvaHg/qv5v187clRC6FWRrQULgXTlks/NINpEimEe
+iD7yIXYFiF6Wdn0jiPabpXoYRB/3NT8LpjfUXQLR2/b8uw+iH7SWcC4C0hlT
+UsRB9IGAhRIgOil6ohqIbij20ADR/Q8qTUF0ycHH5iBaWPOEDYhu2hXhAqLZ
+pub6gGix6GkhIFonjCEGRIekLgbTFyYuTAHRcoK7wDTXz/RMEF33KbYERH94
+uaISREdsuQ+mpyiGNYHoQ5OPgOnzXbeng+jc8DezQTRz2fYNIHrOyimbQHRB
+p8pOEH3jif1uEK0rk3ACRN/vfHkGRK9dzHEVRDNUFV8H0b8utz8H0Xe5uj+C
+6MCjLj9AdJvUxV8geqf9b4bFQDpt7R8WEA0AomfsWg==
+  "]],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    {RGBColor[204., 0., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {204., 0., 0.}}}]]}, 
+    {RGBColor[0., 77., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 77., 0.}}}]]}, 
+    {RGBColor[0., 0., 63.9], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 0., 63.9}}}]]}}, 
+   {Dashing[{0.03, 0.07}], Line3DBox[{{170, 55, 35.5}, {0, 55, 35.5}}], 
+    Line3DBox[{{170, 55, 35.5}, {170, 0, 0}}], 
+    Line3DBox[{{0, 55, 35.5}, {0, 55, 0}}], 
+    Line3DBox[{{0, 55, 35.5}, {0, 0, 35.5}}]}, 
+   {Thickness[0.01], Dashing[{}], Arrow3DBox[{{0, 0, 0}, {170, 55, 35.5}}]}},
+  AspectRatio->1,
+  Axes->True,
+  AxesEdge->{{0, 0}, {0, 0}, {0, 0}},
+  AxesLabel->{
+    FormBox["\"\:0420\:043e\:0441\:0442, \:0441\:043c\"", TraditionalForm], 
+    FormBox[
+    "\"\:041c\:0430\:0441\:0441\:0430, \:043a\:0433\"", TraditionalForm], 
+    FormBox[
+    "\"\:0412\:043e\:0437\:0440\:0430\:0441\:0442, \:043b\:0435\:0442\"", 
+     TraditionalForm]},
+  AxesStyle->Opacity[1],
+  Boxed->False,
+  ImageSize->{1016., Automatic},
+  LabelStyle->Directive[FontSize -> 20, FontWeight -> "Bold"],
+  PlotRange->{{0, 204.}, {0, 77.}, {0, 63.9}},
+  TicksStyle->Opacity[1],
+  ViewPoint->{1.6828791913539491`, 2.3121060706612346`, -1.808890031295256},
+  ViewVertical->{0.7973749886063591, -1.2864540702071214`, 
+   1.1440144795249962`}]], "Output",
+ CellChangeTimes->{
+  3.75580756525555*^9, {3.7558076063612213`*^9, 3.755807613634362*^9}, 
+   3.755807652073655*^9, 3.7558076962056227`*^9, 3.7558077666083665`*^9, {
+   3.755807954312454*^9, 3.7558079679550743`*^9}, 3.755808136955433*^9, {
+   3.7558082038937216`*^9, 3.7558082184970503`*^9}, {3.7558083348257923`*^9, 
+   3.7558083596423235`*^9}, 3.7558084318383274`*^9, {3.7558086407488837`*^9, 
+   3.7558086531746626`*^9}, {3.755808720372134*^9, 3.755808727326047*^9}, 
+   3.755808779429056*^9, 3.7558088102228107`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Plot", "::", "nonopt"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Options expected (instead of \[NoBreak]\\!\\(Null\\)\
+\[NoBreak]) beyond position \[NoBreak]\\!\\(2\\)\[NoBreak] in \
+\[NoBreak]\\!\\(Plot[\\(\\(x\\^3, \\(\\({x, \\(\\(-1\\)\\), 1}\\)\\), Null\\)\
+\\)]\\)\[NoBreak]. An option must be a rule or a list of rules. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nonopt\\\", \
+ButtonNote -> \\\"Plot::nonopt\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.75580756529858*^9, {3.755807606424266*^9, 3.7558076136734066`*^9}, 
+   3.7558076521207037`*^9, 3.755807696252659*^9, 3.755807766655399*^9, {
+   3.7558079543634725`*^9, 3.755807968005125*^9}, 3.7558081369844522`*^9, {
+   3.7558082039407563`*^9, 3.755808218541083*^9}, {3.7558083348728247`*^9, 
+   3.75580835969436*^9}, 3.755808431883359*^9, {3.755808640712859*^9, 
+   3.7558086532126884`*^9}, {3.7558087204101644`*^9, 3.755808727362073*^9}, 
+   3.7558087794690847`*^9, 3.7558088102628393`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   SuperscriptBox["x", "3"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "Null"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.75580756525555*^9, {3.7558076063612213`*^9, 3.755807613634362*^9}, 
+   3.755807652073655*^9, 3.7558076962056227`*^9, 3.7558077666083665`*^9, {
+   3.755807954312454*^9, 3.7558079679550743`*^9}, 3.755808136955433*^9, {
+   3.7558082038937216`*^9, 3.7558082184970503`*^9}, {3.7558083348257923`*^9, 
+   3.7558083596423235`*^9}, 3.7558084318383274`*^9, {3.7558086407488837`*^9, 
+   3.7558086531746626`*^9}, {3.755808720372134*^9, 3.755808727326047*^9}, 
+   3.755808779429056*^9, 3.755808810264849*^9}],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    {RGBColor[180., 0., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {180., 0., 0.}}}]]}, 
+    {RGBColor[0., 60., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 60., 0.}}}]]}, 
+    {RGBColor[0, 0, 51], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 0., 51.}}}]]}}, 
+   Line3DBox[{{150, 50, 39}, {0, 50, 39}}], 
+   {Dashing[{0.03, 0.07}], Line3DBox[{{150, 50, 39}, {150, 0, 0}}], 
+    Line3DBox[{{0, 50, 39}, {0, 50, 0}}], 
+    Line3DBox[{{0, 50, 39}, {0, 0, 39}}]}, 
+   {Thickness[0.01], Dashing[{}], Arrow3DBox[{{0, 0, 0}, {150, 50, 39}}]}},
+  AspectRatio->1,
+  Axes->True,
+  AxesEdge->{{0, 0}, {0, 0}, {0, 0}},
+  AxesLabel->{
+    FormBox["\"\:0420\:043e\:0441\:0442, \:0441\:043c\"", TraditionalForm], 
+    FormBox[
+    "\"\:041c\:0430\:0441\:0441\:0430, \:043a\:0433\"", TraditionalForm], 
+    FormBox["\"\:0420\:0430\:0437\:043c\:0435\:0440\"", TraditionalForm]},
+  AxesStyle->Opacity[0],
+  Boxed->False,
+  ImageSize->Large,
+  PlotRange->{{0, 180.}, {0, 60.}, {0, 51}},
+  TicksStyle->Opacity[1],
+  ViewPoint->{1.925265651794785, 1.4528257763259684`, 2.373320339453159},
+  ViewVertical->{0.9988340857831626, -0.03749146890236946, 
+   0.1645739448825715}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.7558074615454297`*^9, {3.755807527267616*^9, 3.7558075453144245`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Plot", "::", "nonopt"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Options expected (instead of \[NoBreak]\\!\\(Null\\)\
+\[NoBreak]) beyond position \[NoBreak]\\!\\(2\\)\[NoBreak] in \
+\[NoBreak]\\!\\(Plot[\\(\\(x\\^3, \\(\\({x, \\(\\(-1\\)\\), 1}\\)\\), Null\\)\
+\\)]\\)\[NoBreak]. An option must be a rule or a list of rules. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nonopt\\\", \
+ButtonNote -> \\\"Plot::nonopt\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7558075273076525`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   SuperscriptBox["x", "3"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "Null"}], "]"}]], "Output",
+ CellChangeTimes->{3.7558074615454297`*^9, 3.755807527309656*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"%252", ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    {RGBColor[180., 0., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {180., 0., 0.}}}]]}, 
+    {RGBColor[0., 60., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 60., 0.}}}]]}, 
+    {RGBColor[0, 0, 51], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 0., 51.}}}]]}}, 
+   Line3DBox[{{150, 50, 39}, {0, 50, 39}}], 
+   {Dashing[{0.03, 0.07}], Line3DBox[{{150, 50, 39}, {150, 0, 0}}], 
+    Line3DBox[{{0, 50, 39}, {0, 50, 0}}], 
+    Line3DBox[{{0, 50, 39}, {0, 0, 39}}]}, 
+   {Thickness[0.01], Dashing[{}], Arrow3DBox[{{0, 0, 0}, {150, 50, 39}}]}},
+  AspectRatio->1,
+  Axes->True,
+  AxesEdge->{{0, 0}, {0, 0}, {0, 0}},
+  AxesLabel->{
+    FormBox["\"\:0420\:043e\:0441\:0442, \:0441\:043c\"", TraditionalForm], 
+    FormBox[
+    "\"\:041c\:0430\:0441\:0441\:0430, \:043a\:0433\"", TraditionalForm], 
+    FormBox["\"\:0420\:0430\:0437\:043c\:0435\:0440\"", TraditionalForm]},
+  AxesStyle->Opacity[0],
+  Boxed->False,
+  ImageSize->Medium,
+  PlotRange->{{0, 180.}, {0, 60.}, {0, 47}},
+  TicksStyle->Opacity[1]]], "Output",
+ CellChangeTimes->{3.7558074616004686`*^9, 3.7558075131148615`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    {RGBColor[180., 0., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {180., 0., 0.}}}]]}, 
+    {RGBColor[0., 60., 0.], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 60., 0.}}}]]}, 
+    {RGBColor[0, 0, 47], 
+     Arrow3DBox[TubeBox[{{{0., 0., 0.}, {0., 0., 47.}}}]]}}, 
+   Line3DBox[{{150, 50, 39}, {0, 50, 39}}], 
+   {Dashing[{0.03, 0.07}], Line3DBox[{{150, 50, 39}, {150, 0, 0}}], 
+    Line3DBox[{{0, 50, 39}, {0, 50, 0}}], 
+    Line3DBox[{{0, 50, 39}, {0, 0, 39}}]}, 
+   {Thickness[0.01], Dashing[{}], Arrow3DBox[{{0, 0, 0}, {150, 50, 39}}]}},
+  AspectRatio->1,
+  Axes->True,
+  AxesEdge->{{0, 0}, {0, 0}, {0, 0}},
+  AxesLabel->{
+    FormBox["\"\:0420\:043e\:0441\:0442, \:0441\:043c\"", TraditionalForm], 
+    FormBox[
+    "\"\:041c\:0430\:0441\:0441\:0430, \:043a\:0433\"", TraditionalForm], 
+    FormBox["\"\:0420\:0430\:0437\:043c\:0435\:0440\"", TraditionalForm]},
+  AxesStyle->Opacity[0],
+  Boxed->False,
+  ImageSize->{576., 576.},
+  PlotRange->{{0, 180.}, {0, 60.}, {0, 47}},
+  TicksStyle->Opacity[1],
+  ViewPoint->{1.8363756584347075`, 2.7487382334465122`, -0.7226081684411276},
+  ViewVertical->{0.9982444395030973, 0.174990879878929, 
+   0.039358566236683976`}]], "Input",
+ CellChangeTimes->{3.755807432354808*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Plot", "::", "nonopt"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Options expected (instead of \[NoBreak]\\!\\(Null\\)\
+\[NoBreak]) beyond position \[NoBreak]\\!\\(2\\)\[NoBreak] in \
+\[NoBreak]\\!\\(Plot[\\(\\(x\\^3, \\(\\({x, \\(\\(-1\\)\\), 1}\\)\\), Null\\)\
+\\)]\\)\[NoBreak]. An option must be a rule or a list of rules. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nonopt\\\", \
+ButtonNote -> \\\"Plot::nonopt\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.755806917794639*^9, 3.755807042889558*^9, {3.755807148458121*^9, 
+   3.75580716791693*^9}, 3.755807206788391*^9, {3.7558072385878735`*^9, 
+   3.7558072672461042`*^9}, {3.7558073558857994`*^9, 3.75580740527868*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   SuperscriptBox["x", "3"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "Null"}], "]"}]], "Output",
+ CellChangeTimes->{{3.7558065094236555`*^9, 3.755806562112877*^9}, {
+   3.755806608747839*^9, 3.7558066479913282`*^9}, {3.755806748840587*^9, 
+   3.7558067960126057`*^9}, 3.755806917630523*^9, 3.755807042839506*^9, {
+   3.755807148416092*^9, 3.755807167879904*^9}, 3.755807206751365*^9, {
+   3.7558072385298147`*^9, 3.7558072671820574`*^9}, {3.7558073558187375`*^9, 
+   3.755807405281681*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[
+  {Thickness[0.01], Arrow3DBox[{{0, 0, 0}, {170, 50, 39}}]},
+  AspectRatio->1,
+  Axes->True,
+  AxesEdge->{{0, 0}, {0, 0}, {0, 0}},
+  AxesLabel->{
+    FormBox["\"\:0420\:043e\:0441\:0442, \:0441\:043c\"", TraditionalForm], 
+    FormBox[
+    "\"\:041c\:0430\:0441\:0441\:0430, \:043a\:0433\"", TraditionalForm], 
+    FormBox["\"\:0420\:0430\:0437\:043c\:0435\:0440\"", TraditionalForm]},
+  Boxed->False,
+  ImageSize->Large,
+  PlotRange->{{0, 200}, {0, 70}, {0, 46}},
+  ViewPoint->{1.9886934495017972`, 1.9626021477209925`, -1.9087407298189034`},
+  ViewVertical->{0.962444593793762, 
+   0.5144465328608556, -0.8833701744962044}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.7558060199313436`*^9, {3.7558061293757563`*^9, 3.7558061574035563`*^9}, 
+   3.7558062335143256`*^9, {3.7558063282675285`*^9, 3.755806361477992*^9}}]
+}, Open  ]]
+},
+WindowSize->{1833, 1026},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4805, 138, 272, "Input"],
+Cell[5388, 162, 1866, 39, 894, "Output"],
+Cell[7257, 203, 1115, 19, 30, "Message"],
+Cell[8375, 224, 719, 14, 33, "Output"],
+Cell[9097, 240, 1350, 32, 591, "Output"],
+Cell[10450, 274, 642, 12, 30, "Message"],
+Cell[11095, 288, 265, 7, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11397, 300, 147, 4, 31, "Input"],
+Cell[11547, 306, 1116, 26, 324, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12700, 337, 1257, 29, 591, InheritFromParent],
+Cell[13960, 368, 837, 15, 30, "Message"],
+Cell[14800, 385, 593, 12, 33, "Output"],
+Cell[15396, 399, 890, 21, 495, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
